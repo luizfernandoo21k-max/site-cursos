@@ -3,113 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprenda Online</title>
-<style>
-.apresentacao {
-    max-width: 700px;
-    margin: 30px auto;
-    padding: 35px 20px;
-    text-align: center;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
 
-.apresentacao h1 {
-    font-size: 32px;
-    margin-bottom: 12px;
-}
+    <title>SITE LEAL | Aprenda a Criar Sites</title>
 
-.descricao {
-    font-size: 18px;
-    color: #666;
-    line-height: 1.5;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-.beneficios {
-    display: grid;
-    gap: 12px;
-    margin: 25px 0;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #172033;
+        }
 
-.beneficios div {
-    padding: 14px;
-    background: #f4f7fb;
-    border-radius: 10px;
-    font-weight: bold;
-}
+        header {
+            background: #111827;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-.oferta {
-    margin: 25px 0;
-}
+        header h2 {
+            font-size: 24px;
+        }
 
-.oferta strong {
-    font-size: 32px;
-}
+        .hero {
+            max-width: 900px;
+            margin: 35px auto;
+            padding: 55px 25px;
+            text-align: center;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+        }
 
-.botao-comprar {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    margin: 20px auto 0;
-    padding: 16px;
-    background: #2563eb;
-    color: white;
-    text-decoration: none;
-    border-radius: 12px;
-    font-size: 17px;
-    font-weight: bold;
-}
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 18px;
+        }
 
-@media (max-width: 600px) {
-    .apresentacao {
-        margin: 15px 10px;
-        padding: 28px 16px;
-    }
+        .hero h1 span {
+            color: #2563eb;
+        }
 
-    .apresentacao h1 {
-        font-size: 25px;
-    }
-}
-</style>
-</head>
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            font-size: 19px;
+            line-height: 1.6;
+            color: #64748b;
+        }
 
-<body>
+        .botao {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 16px 30px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 17px;
+        }
 
-    <h1>Aprenda Online</h1>
+        .botao:hover {
+            opacity: 0.9;
+        }
 
-    <h2>Aprenda novas habilidades pela internet</h2>
+        .beneficios {
+            max-width: 900px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            padding: 0 20px;
+        }
 
-    <p>Cursos online para você estudar no seu ritmo.</p>
-
-    <h2>Cursos disponíveis</h2>
-
-    <h3>Curso de HTML e CSS</h3>
-    <p>Aprenda a criar seus primeiros sites.</p>
-    <p><strong>R$ 29,90</strong></p>
-
-   <a href="/curso">Comprar curso</a>
-<section class="apresentacao">
-
-    <h1>🎓 Aprenda a Criar Sites do Zero</h1>
-
-    <p class="descricao">
-        Aprenda HTML e CSS de forma simples, prática e passo a passo.
-    </p>
-
-    <div class="beneficios">
-        <div>📚 5 aulas completas</div>
-        <div>🎥 Vídeos das aulas</div>
-        <div>📝 Exercícios práticos</div>
-        <div>🚀 Projeto final</div>
-    </div>
-
-    <div class="oferta">
-        <p>Curso completo por apenas</p>
-        <strong>R$ 29,90</strong>
-    </div>
-
-</body>
-</html>
-
-
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box
