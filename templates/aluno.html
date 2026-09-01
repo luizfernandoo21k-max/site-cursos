@@ -1,0 +1,662 @@
+k<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Área do Aluno</title>
+
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px 15px 40px;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+.aula {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.aula h2 {
+    margin-top: 0;
+    font-size: 21px;
+}
+
+.aula h3 {
+    margin-top: 22px;
+}
+
+.aula p,
+.aula li {
+    line-height: 1.6;
+}
+
+.status {
+    display: inline-block;
+    background: #dcfce7;
+    color: #166534;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.aula button {
+    width: 100%;
+    border: 0;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.aula form button:not(:disabled) {
+    background: #2563eb;
+    color: white;
+}
+
+.aula button:disabled {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+pre {
+    overflow-x: auto;
+    background: #111827;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.video {
+    width: 100%;
+    margin: 18px 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    border: 0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px 10px 30px;
+    }
+
+    .titulo {
+        font-size: 24px;
+    }
+
+    .aula {
+        padding: 17px;
+        border-radius: 14px;
+    }
+}
+
+
+
+
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        .topo {
+            background: #111827;
+            color: white;
+            padding: 25px 18px;
+        }
+
+        .topo h1 {
+            margin: 0 0 8px;
+            font-size: 26px;
+        }
+
+        .topo p {
+            margin: 0;
+            opacity: 0.85;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 750px;
+            margin: auto;
+            padding: 15px;
+        }
+
+        .titulo {
+            margin: 10px 0 5px;
+            font-size: 22px;
+        }
+
+        .subtitulo {
+            color: #666;
+            margin-top: 0;
+        }
+
+        .aula {
+            background: white;
+            margin: 18px 0;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .aula h2 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        .aula p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .status {
+            display: inline-block;
+            margin-bottom: 12px;
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        form {
+            margin-top: 18px;
+        }
+
+        button {
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background: #111827;
+            color: white;
+        }
+
+        button:disabled {
+            background: #d1d5db;
+            color: #374151;
+            cursor: default;
+        }
+
+        @media (min-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            .aula {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="topo">
+        <div class="container">
+            <h1>🎓 Área do Aluno</h1>
+            <p>Bem-vindo, {{ nome }}!</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <h2 class="titulo">Seu curso</h2>
+        <p class="subtitulo">
+            Continue seus estudos e acompanhe seu progresso.
+        </p>
+
+
+        <!-- AULA 1 -->
+
+        <div class="aula">
+
+            <h2>Aula 1 — Introdução ao HTML</h2>
+
+            {% if 1 in aulas_concluidas %}
+                <span class="status">✅ Concluída</span>
+            {% endif %}
+
+            <p>
+                Nesta aula você vai conhecer o HTML e entender
+                como uma página de internet é estruturada.
+            </p>
+<h3>O que é HTML?</h3>
+
+<p>
+    HTML é a linguagem usada para estruturar páginas da internet.
+    Com HTML podemos criar títulos, textos, imagens, links e botões.
+</p>
+
+<h3>🧱 Estrutura básica</h3>
+
+<p>
+    Uma página HTML possui uma estrutura organizada.
+    Os elementos principais são HTML, HEAD e BODY.
+</p>
+
+<h3>💻 Exemplo</h3>
+
+<pre><code>&lt;h1&gt;Meu primeiro site&lt;/h1&gt;
+&lt;p&gt;Olá! Este é meu primeiro site.&lt;/p&gt;
+&lt;button&gt;Clique aqui&lt;/button&gt;</code></pre>
+
+<h3>📝 Exercício</h3>
+
+<p>
+    Crie mentalmente um título para o site que você gostaria de fazer.
+</p>
+
+<p>
+    🎯 <strong>Objetivo:</strong> entender para que serve o HTML.
+</p>
+
+<div class="video">
+    <iframe
+        src="https://www.youtube.com/embed/ijv8-PeLZ_o"
+        title="Introdução ao HTML"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+            <form method="POST" action="/concluir-aula">
+                <input type="hidden" name="aula" value="1">
+
+                {% if 1 in aulas_concluidas %}
+                    <button type="button" disabled>
+                        ✅ Aula concluída
+                    </button>
+                {% else %}
+                    <button type="submit">
+                        Marcar aula como concluída
+                    </button>
+                {% endif %}
+            </form>
+
+        </div>
+
+
+        <!-- AULA 2 -->
+
+        <div class="aula">
+
+            <h2>Aula 2 — Criando sua primeira página</h2>
+
+            {% if 2 in aulas_concluidas %}
+                <span class="status">✅ Concluída</span>
+            {% endif %}
+
+            <p>
+                Aprenda a criar a estrutura básica de uma página
+                HTML e organizar seus principais elementos.
+            </p>
+
+<h3>🌐 Criando sua primeira página</h3>
+
+<p>
+    Agora que você já conhece o HTML, vamos aprender a montar
+    uma página simples do zero.
+</p>
+
+<h3>💻 Primeiro código</h3>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Meu site&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+    &lt;p&gt;Minha primeira página.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<h3>📝 Exercício</h3>
+
+<p>
+    Pense em um título e uma frase para sua própria página.
+</p>
+
+<p>
+    🎯 <strong>Objetivo:</strong> aprender a montar a estrutura
+    básica de uma página HTML.
+</p>           
+<h3>🎥 Vídeo da aula</h3>
+
+<div class="video">
+    <iframe
+src="https://www.youtube.com/embed/MOd8PCyEB88"
+        title="Criando sua primeira página HTML"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+ <form method="POST" action="/concluir-aula">
+
+                <input type="hidden" name="aula" value="2">
+
+                {% if 2 in aulas_concluidas %}
+                    <button type="button" disabled>
+                        ✅ Aula concluída
+                    </button>
+                {% else %}
+                    <button type="submit">
+                        Marcar aula como concluída
+                    </button>
+                {% endif %}
+            </form>
+<h3>🎨 O que é CSS?</h3>
+
+<p>
+    CSS é a linguagem usada para deixar uma página HTML
+    mais bonita e organizada.
+</p>
+
+<h3>✨ O que podemos mudar com CSS?</h3>
+
+<ul>
+    <li>🎨 Cores</li>
+    <li>🔤 Tamanho e estilo das letras</li>
+    <li>📦 Espaçamento</li>
+    <li>🔘 Aparência dos botões</li>
+    <li>📱 Organização da página</li>
+</ul>
+
+<h3>💻 Exemplo</h3>
+
+<pre><code>h1 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 18px;
+}</code></pre>
+
+<h3>📝 Exercício</h3>
+
+<p>
+    Imagine uma cor para o título do seu primeiro site.
+</p>
+
+<p>
+    🎯 <strong>Objetivo:</strong> entender como o CSS
+    modifica a aparência de uma página.
+</p>
+        </div>
+<h3>🎥 Vídeo da aula</h3>
+
+<div class="video">
+    <iframe
+        src="https://www.youtube.com/embed/HtVRRHoASes"
+        title="Aula 1 - O que é CSS e CSS Inline"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+
+        <!-- AULA 3 -->
+
+        <div class="aula">
+
+            <h2>Aula 3 — Introdução ao CSS</h2>
+
+            {% if 3 in aulas_concluidas %}
+                <span class="status">✅ Concluída</span>
+            {% endif %}
+
+            <p>
+                Aprenda a usar CSS para deixar suas páginas
+                mais bonitas e organizadas.
+            </p>
+
+            <form method="POST" action="/concluir-aula">
+                <input type="hidden" name="aula" value="3">
+
+                {% if 3 in aulas_concluidas %}
+                    <button type="button" disabled>
+                        ✅ Aula concluída
+                    </button>
+                {% else %}
+                    <button type="submit">
+                        Marcar aula como concluída
+                    </button>
+                {% endif %}
+            </form>
+<h3>🔘 O que são botões?</h3>
+
+<p>
+    Botões permitem que o visitante interaja com uma página.
+    Eles podem levar para outra página ou executar uma ação.
+</p>
+
+<h3>💻 Criando um botão</h3>
+
+<pre><code>&lt;button&gt;Clique aqui&lt;/button&gt;</code></pre>
+
+<h3>🎨 Personalizando com CSS</h3>
+
+<pre><code>button {
+    padding: 12px;
+    font-size: 18px;
+}</code></pre>
+
+<h3>📝 Exercício</h3>
+
+<p>
+    Crie uma ideia de botão para o seu site.
+    Por exemplo: "Conheça o curso".
+</p>
+
+<p>
+    🎯 <strong>Objetivo:</strong> aprender a criar
+    e personalizar botões.
+</p>
+        </div>
+<h3>🎥 Vídeo da aula</h3>
+
+<div class="video">
+    <iframe
+        src="https://www.youtube.com/embed/Hy8Of0axWA0"
+        title="Aula 4 - Aplicando CSS em botões HTML"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+
+        <!-- AULA 4 -->
+
+        <div class="aula">
+
+            <h2>Aula 4 — Criando botões</h2>
+
+            {% if 4 in aulas_concluidas %}
+                <span class="status">✅ Concluída</span>
+            {% endif %}
+
+            <p>
+                Aprenda a criar e estilizar botões usando
+                HTML e CSS.
+            </p>
+
+            <form method="POST" action="/concluir-aula">
+                <input type="hidden" name="aula" value="4">
+
+                {% if 4 in aulas_concluidas %}
+                    <button type="button" disabled>
+                        ✅ Aula concluída
+                    </button>
+                {% else %}
+                    <button type="submit">
+                        Marcar aula como concluída
+                    </button>
+                {% endif %}
+            </form>
+<h3>🚀 Seu primeiro projeto</h3>
+
+<p>
+    Nesta aula você vai juntar tudo o que aprendeu
+    nas aulas anteriores.
+</p>
+
+<h3>📋 O que o projeto deve ter?</h3>
+
+<ul>
+    <li>Um título</li>
+    <li>Textos</li>
+    <li>Um botão</li>
+    <li>Estilos usando CSS</li>
+    <li>Uma organização simples e bonita</li>
+</ul>
+
+<h3>💻 Desafio</h3>
+
+<p>
+    Crie uma página sobre um assunto que você gosta.
+    Use HTML para organizar o conteúdo e CSS para
+    personalizar a aparência.
+</p>
+
+<h3>🏆 Finalização</h3>
+
+<p>
+    Parabéns! Você chegou à última aula do curso.
+    Agora é hora de praticar e continuar criando seus próprios sites.
+</p>
+
+<p>
+    🎯 <strong>Objetivo:</strong> criar seu primeiro projeto
+    usando HTML e CSS.
+</p>
+        </div>
+<h3>🎥 Vídeo da aula</h3>
+
+<div class="video">
+    <iframe
+        src="https://www.youtube.com/embed/PuyZAUyZYDI"
+        title="Projeto final com HTML e CSS"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+
+        <!-- AULA 5 -->
+
+        <div class="aula">
+
+            <h2>Aula 5 — Projeto Final</h2>
+
+            {% if 5 in aulas_concluidas %}
+                <span class="status">✅ Concluída</span>
+            {% endif %}
+
+            <p>
+                Coloque em prática tudo o que você aprendeu
+                criando seu primeiro projeto com HTML e CSS.
+            </p>
+<h3>🚀 Seu primeiro projeto</h3>
+
+<p>
+    Nesta aula você vai juntar tudo o que aprendeu
+    nas aulas anteriores.
+</p>
+
+<h3>📋 O que o projeto deve ter?</h3>
+
+<ul>
+    <li>Um título</li>
+    <li>Textos</li>
+    <li>Um botão</li>
+    <li>Estilos usando CSS</li>
+    <li>Uma organização simples e bonita</li>
+</ul>
+
+<h3>💻 Desafio</h3>
+
+<p>
+    Crie uma página sobre um assunto que você gosta.
+    Use HTML para organizar o conteúdo e CSS para
+    personalizar a aparência.
+</p>
+
+<h3>🏆 Finalização</h3>
+
+<p>
+    Parabéns! Você chegou à última aula do curso.
+    Agora é hora de praticar e continuar criando seus próprios sites.
+</p>
+
+<p>
+    🎯 <strong>Objetivo:</strong> criar seu primeiro projeto
+    usando HTML e CSS.
+</p>
+            <form method="POST" action="/concluir-aula">
+                <input type="hidden" name="aula" value="5">
+
+                {% if 5 in aulas_concluidas %}
+                    <button type="button" disabled>
+                        ✅ Aula concluída
+                    </button>
+                {% else %}
+                    <button type="submit">
+                        Marcar aula como concluída
+                    </button>
+                {% endif %}
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

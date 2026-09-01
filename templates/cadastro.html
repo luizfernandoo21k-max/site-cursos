@@ -1,0 +1,73 @@
+k<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Aprenda Online</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .cadastro {
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: 12px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cadastro">
+
+        <h1>Criar conta</h1>
+
+        <p>Cadastre-se para acessar seus cursos.</p>
+
+        <form method="POST" action="/cadastro">
+
+            <input type="text" name="nome" placeholder="Seu nome" required>
+
+            <input type="email" name="email" placeholder="Seu e-mail" required>
+
+            <input type="password" name="senha" placeholder="Crie uma senha" required>
+
+            <button type="submit">Criar conta</button>
+
+        </form>
+
+        <p>
+            Já possui uma conta?
+            <a href="/login">Entrar</a>
+        </p>
+
+    </div>
+
+</body>
+</html>
