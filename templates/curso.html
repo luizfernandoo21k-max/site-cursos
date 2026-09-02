@@ -1,68 +1,120 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso de HTML e CSS | SITE LEAL</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f8fafc;color:#0f172a}
+header{background:#0b1120;padding:20px;text-align:center}
+header a{color:white;text-decoration:none;font-size:23px;font-weight:bold}
+header span{color:#3b82f6}
+.hero{background:linear-gradient(135deg,#0b1120,#172554);color:white;padding:60px 20px;text-align:center}
+.tag{display:inline-block;background:rgba(59,130,246,.15);border:1px solid rgba(147,197,253,.4);color:#93c5fd;padding:8px 15px;border-radius:30px;margin-bottom:20px}
+.hero h1{font-size:42px;margin-bottom:20px}
+.hero p{max-width:700px;margin:auto;color:#cbd5e1;font-size:18px;line-height:1.6}
+.preco{margin:25px 0}
+.preco small{display:block;color:#cbd5e1;margin-bottom:5px}
+.preco strong{font-size:40px}
+.botao{display:inline-block;background:#2563eb;color:white;text-decoration:none;padding:16px 30px;border-radius:10px;font-weight:bold}.conteudo{max-width:1000px;margin:auto;padding:60px 20px}
+.titulo{text-align:center;font-size:32px;margin-bottom:15px}
+.subtitulo{text-align:center;color:#64748b;margin-bottom:40px}
+.aulas{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.aula{background:white;padding:25px;border-radius:18px;box-shadow:0 7px 25px rgba(15,23,42,.07)}
+.aula .numero{color:#2563eb;font-weight:bold;font-size:14px;margin-bottom:10px}
+.aula h3{margin-bottom:10px}
+.aula p{color:#64748b;line-height:1.5}
+.destaque{margin-top:50px;background:#eef4ff;padding:35px;border-radius:20px;text-align:center}
+.destaque h2{margin-bottom:15px}
+.destaque p{color:#64748b;line-height:1.6}
+footer{background:#0b1120;color:#94a3b8;text-align:center;padding:25px}
+@media(max-width:650px){
+.hero h1{font-size:32px}
+.aulas{grid-template-columns:1fr}
+.preco strong{font-size:36px}
+}
+</style>
+</head>
+<body>
 
-    <title>Curso de HTML e CSS | SITE LEAL</title>
+<header>
+<a href="/">SITE <span>LEAL</span></a>
+</header>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<section class="hero">
+<div class="tag">🎓 CURSO ONLINE</div>
+<h1>Aprenda HTML e CSS do zero</h1>
+<p>Aprenda a criar suas primeiras páginas para a internet de forma simples, prática e passo a passo.</p>
+<div class="preco">
+<small>Curso completo por apenas</small>
+<strong>R$ 29,90</strong>
+</div>
+<a class="botao" href="/checkout">QUERO COMPRAR O CURSO →</a>
+</section><section class="conteudo">
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f8fafc;
-            color: #0f172a;
-        }
+<h2 class="titulo">O que você vai aprender?</h2>
 
-        header {
-            background: #0b1120;
-            padding: 20px;
-            text-align: center;
-        }
+<p class="subtitulo">
+Um caminho simples para começar a desenvolver seus primeiros sites.
+</p>
 
-        header a {
-            color: white;
-            text-decoration: none;
-            font-size: 23px;
-            font-weight: bold;
-        }
+<div class="aulas">
 
-        header span {
-            color: #3b82f6;
-        }
+<div class="aula">
+<div class="numero">AULA 01</div>
+<h3>🌐 Estrutura HTML</h3>
+<p>Entenda como funciona a estrutura básica de uma página HTML.</p>
+</div>
 
-        .hero {
-            background: linear-gradient(135deg, #0b1120, #172554);
-            color: white;
-            padding: 75px 20px;
-            text-align: center;
-        }
+<div class="aula">
+<div class="numero">AULA 02</div>
+<h3>📝 Textos e títulos</h3>
+<p>Aprenda a organizar textos, títulos e informações na página.</p>
+</div>
 
-        .tag {
-            display: inline-block;
-            background: rgba(59,130,246,0.15);
-            border: 1px solid rgba(147,197,253,0.4);
-            color: #93c5fd;
-            padding: 8px 15px;
-            border-radius: 30px;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
+<div class="aula">
+<div class="numero">AULA 03</div>
+<h3>🖼️ Imagens e links</h3>
+<p>Aprenda a adicionar imagens e criar links para outras páginas.</p>
+</div>
 
-        .hero h1 {
-            font-size: 45px;
-            margin-bottom: 20px;
-        }
+<div class="aula">
+<div class="numero">AULA 04</div>
+<h3>🔘 Botões</h3>
+<p>Crie botões e aprenda a estilizar seus elementos.</p>
+</div>
 
-        .hero p {
-            max-width: 700px;
-            margin: auto;
-            color: #cbd5e1;
-            font-size: 18px;
-            line-height: 1.6;
-       
+<div class="aula">
+<div class="numero">AULA 05</div>
+<h3>🎨 CSS</h3>
+<p>Aprenda a usar CSS para deixar suas páginas mais bonitas.</p>
+</div>
+
+<div class="aula">
+<div class="numero">PROJETO FINAL</div>
+<h3>🚀 Criando seu site</h3>
+<p>Junte os conhecimentos aprendidos e coloque tudo em prática.</p>
+</div>
+
+</div>
+
+<div class="destaque">
+<h2>🚀 Comece hoje mesmo</h2>
+<p>
+Não precisa saber programação para começar.
+O curso foi pensado para quem está dando os primeiros passos na criação de sites.
+</p>
+<br>
+<a class="botao" href="/checkout">COMEÇAR AGORA</a>
+</div>
+
+</section>
+
+<footer>
+© 2026 SITE LEAL — Curso de HTML e CSS
+</footer>
+
+</body>
+</html>
