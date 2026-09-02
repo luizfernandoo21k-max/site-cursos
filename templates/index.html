@@ -4,85 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SITE LEAL | Aprenda a Criar Sites</title>
+    <title>SITE LEAL | Sites Profissionais</title>
 
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
-            background: #f4f7fb;
-            color: #172033;
+            background: #f8fafc;
+            color: #0f172a;
         }
 
         header {
-            background: #111827;
-            color: white;
-            padding: 20px;
-            text-align: center;
+            background: #0b1120;
+            padding: 18px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
-        header h2 {
-            font-size: 24px;
+        .nav {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: white;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #3b82f6;
+        }
+
+        .nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
         }
 
         .hero {
-            max-width: 900px;
-            margin: 35px auto;
-            padding: 55px 25px;
+            background: linear-gradient(135deg, #0b1120, #172554);
+            color: white;
+            padding: 100px 20px;
             text-align: center;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 15px;
+            background: rgba(59,130,246,0.15);
+            border: 1px solid rgba(96,165,250,0.4);
+            border-radius: 30px;
+            color: #93c5fd;
+            margin-bottom: 20px;
+            font-size: 14px;
         }
 
         .hero h1 {
-            font-size: 42px;
-            margin-bottom: 18px;
+            font-size: 52px;
+            line-height: 1.1;
+            margin-bottom: 22px;
         }
 
         .hero h1 span {
-            color: #2563eb;
+            color: #60a5fa;
         }
 
         .hero p {
-            max-width: 650px;
+            max-width: 680px;
             margin: auto;
+            color: #cbd5e1;
             font-size: 19px;
             line-height: 1.6;
-            color: #64748b;
+        }
+
+        .botoes {
+            margin-top: 35px;
         }
 
         .botao {
             display: inline-block;
-            margin-top: 30px;
-            padding: 16px 30px;
-            background: #2563eb;
-            color: white;
+            padding: 15px 28px;
+            border-radius: 10px;
             text-decoration: none;
-            border-radius: 12px;
             font-weight: bold;
-            font-size: 17px;
+            margin: 5px;
         }
 
-        .beneficios {
-            max-width: 900px;
-            margin: 30px auto;
+        .principal {
+            background: #2563eb;
+            color: white;
+        }
+
+        .secundario {
+            border: 1px solid #64748b;
+            color: white;
+        }
+
+        .secao {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .titulo {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .subtitulo {
+            color: #64748b;
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .cards {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-            padding: 0 20px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 45px;
         }
 
         .card {
             background: white;
-            padding: 25px;
+            padding: 30px 20px;
             border-radius: 18px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            box-shadow: 0 8px 25px rgba(15,23,42,0.07);
+        }
+
+        .icone {
+            font-size: 35px;
+            margin-bottom: 18px;
         }
 
         .card h3 {
@@ -92,37 +165,101 @@
         .card p {
             color: #64748b;
             line-height: 1.5;
+            font-size: 15px;
         }
 
-        .oferta {
-            max-width: 900px;
-            margin: 35px auto;
-            padding: 35px 20px;
-            text-align: center;
-            background: #111827;
+        .processo {
+            background: #eef4ff;
+        }
+
+        .passos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 45px;
+        }
+
+        .passo {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+        }
+
+        .numero {
+            width: 45px;
+            height: 45px;
+            margin: auto auto 15px;
+            border-radius: 50%;
+            background: #2563eb;
             color: white;
-            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
         }
 
-        .preco {
+        .cta {
+            background: #0b1120;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .cta h2 {
             font-size: 38px;
-            font-weight: bold;
-            margin: 10px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #cbd5e1;
+            margin-bottom: 25px;
         }
 
         footer {
+            background: #070b14;
+            color: #94a3b8;
             text-align: center;
-            padding: 30px;
-            color: #64748b;
+            padding: 25px;
+            font-size: 14px;
         }
 
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 30px;
+        @media (max-width: 800px) {
+            .hero {
+                padding: 75px 20px;
             }
 
-            .beneficios {
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .passos {
                 grid-template-columns: 1fr;
+            }
+
+            .nav a {
+                display: none;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .titulo {
+                font-size: 28px;
             }
         }
     </style>
@@ -131,67 +268,156 @@
 <body>
 
 <header>
-    <h2>🚀 SITE LEAL</h2>
+    <div class="nav">
+        <div class="logo">SITE <span>LEAL</span></div>
+
+        <div>
+            <a href="#servicos">Serviços</a>
+            <a href="#processo">Como funciona</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </div>
 </header>
 
 <section class="hero">
 
-    <h1>Aprenda a criar sites <span>do zero</span></h1>
+    <div class="hero-content">
 
-    <p>
-        Aprenda HTML e CSS de forma simples, prática e passo a passo.
-        Crie suas primeiras páginas e desenvolva habilidades para começar
-        seus próprios projetos.
+        <div class="tag">🚀 Presença digital para o seu negócio</div>
+
+        <h1>
+            Seu negócio merece um
+            <span>site profissional.</span>
+        </h1>
+
+        <p>
+            Criamos sites modernos, rápidos e adaptados para celular,
+            pensados para apresentar sua empresa e ajudar você a conquistar
+            novos clientes.
+        </p>
+
+        <div class="botoes">
+            <a class="botao principal" href="/curso">
+                Conheça nosso projeto →
+            </a>
+
+            <a class="botao secundario" href="#servicos">
+                Ver serviços
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="secao" id="servicos">
+
+    <h2 class="titulo">O que podemos fazer</h2>
+
+    <p class="subtitulo">
+        Soluções simples e profissionais para colocar sua empresa na internet.
     </p>
 
-    <a class="botao" href="/curso">
-        QUERO COMEÇAR AGORA 🚀
-    </a>
+    <div class="cards">
+
+        <div class="card">
+            <div class="icone">🌐</div>
+            <h3>Site profissional</h3>
+            <p>
+                Uma página moderna para apresentar sua empresa,
+                seus serviços e seus contatos.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icone">📱</div>
+            <h3>Responsivo</h3>
+            <p>
+                Seu site funcionando bem em celulares,
+                tablets e computadores.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icone">📲</div>
+            <h3>WhatsApp</h3>
+            <p>
+                Facilite o contato dos seus clientes com sua empresa.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icone">⚡</div>
+            <h3>Rápido</h3>
+            <p>
+                Páginas leves e objetivas para oferecer
+                uma boa experiência ao visitante.
+            </p>
+        </div>
+
+    </div>
 
 </section>
 
-<section class="beneficios">
+<section class="processo" id="processo">
 
-    <div class="card">
-        <h3>📚 5 aulas</h3>
-        <p>Conteúdo organizado para você aprender passo a passo.</p>
-    </div>
+    <div class="secao">
 
-    <div class="card">
-        <h3>🎥 Vídeos</h3>
-        <p>Assista às aulas e acompanhe os exemplos na prática.</p>
-    </div>
+        <h2 class="titulo">Como funciona?</h2>
 
-    <div class="card">
-        <h3>💻 Prática</h3>
-        <p>Aprenda criando seus próprios códigos HTML e CSS.</p>
-    </div>
+        <p class="subtitulo">
+            Do primeiro contato até seu site ficar online.
+        </p>
 
-    <div class="card">
-        <h3>🚀 Projeto final</h3>
-        <p>Coloque seus conhecimentos em prática criando um projeto.</p>
+        <div class="passos">
+
+            <div class="passo">
+                <div class="numero">1</div>
+                <h3>Você explica</h3>
+                <p>
+                    Conta para nós sobre sua empresa e o que precisa.
+                </p>
+            </div>
+
+            <div class="passo">
+                <div class="numero">2</div>
+                <h3>Nós criamos</h3>
+                <p>
+                    Desenvolvemos uma página de acordo com seu negócio.
+                </p>
+            </div>
+
+            <div class="passo">
+                <div class="numero">3</div>
+                <h3>Site online</h3>
+                <p>
+                    Depois da aprovação, seu site fica disponível na internet.
+                </p>
+            </div>
+
+        </div>
+
     </div>
 
 </section>
 
-<section class="oferta">
+<section class="cta" id="contato">
 
-    <p>Curso completo por apenas</p>
+    <h2>Vamos criar seu site?</h2>
 
-    <div class="preco">
-        R$ 29,90
-    </div>
+    <p>
+        Coloque sua empresa na internet com uma presença profissional.
+    </p>
 
-    <a class="botao" href="/curso">
-        VER O CURSO
+    <a class="botao principal" href="https://wa.me/5500000000000">
+        💬 Falar pelo WhatsApp
     </a>
 
 </section>
 
 <footer>
-    © 2026 SITE LEAL — Todos os direitos reservados.
+    © 2026 SITE LEAL — Desenvolvimento de sites
 </footer>
 
 </body>
 </html>
-
